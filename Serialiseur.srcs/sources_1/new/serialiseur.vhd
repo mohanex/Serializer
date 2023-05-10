@@ -5,15 +5,15 @@ use IEEE.NUMERIC_STD.ALL;
 entity SERIAL is
   generic(
     constant out_width : natural := 1; -- 1 bit en sortie
-    constant in_width : natural := 8 -- 1 octet en entrée
+    constant in_width : natural := 8 -- 1 octet en entrï¿½e
         );
         
   Port ( 
-  data_in : inout STD_LOGIC_VECTOR (in_width-1 DOWNTO 0); -- byte en entrée
+  data_in : inout STD_LOGIC_VECTOR (in_width-1 DOWNTO 0); -- byte en entrï¿½e
   data_out : out STD_LOGIC; -- bits en sortie
   Load : in STD_LOGIC; -- Load Select
   Start : in STD_LOGIC; -- Start/Stop control
-  Stop : out STD_LOGIC; -- bit de status
+  Stop : out STD_LOGIC; -- bit de status (READY)
   clk : in STD_LOGIC -- Clock 100MHz
   );
 end SERIAL;
