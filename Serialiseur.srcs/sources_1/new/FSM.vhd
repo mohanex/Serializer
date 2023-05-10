@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity FSM is
     Port ( 
     
-    data_ram : inout std_logic_vector(7 DOWNTO 0);
+    data_ram : in std_logic_vector(7 DOWNTO 0);
     addr_ram : out std_logic_vector(11 DOWNTO 0);
     R_W_ram : out STD_LOGIC;
     reset_ram : out STD_LOGIC;
@@ -15,7 +15,7 @@ entity FSM is
     data_serial : out std_logic_vector(7 DOWNTO 0);
     start_serial : out STD_LOGIC;
     CS_serial : out STD_LOGIC;
-    stop_serial : out std_logic;
+    stop_serial : in std_logic;
 
 
     clk : in std_logic;
@@ -48,17 +48,55 @@ begin
                         when IDLE =>
                         if reset = '0' then
                             next_state <= Recherche;
+                            data_counter := 0;
+                        else
+                            next_state <= IDLE;
+                        end if;
+
+                        when Recherche =>
+                        if reset = '0' then
+                            R_W_ram <= '1';
+                            CS_ram <= '0';
+                            reset_ram <= '0';
+                            addr_ram <= std_logic_vector( to_unsigned( data_counter, addr_ram'length)); -- convert my data counter to std_logic_vector (4096)10=(1000000000000)2 par exemple
+                            next_state <= Reception;
+                        else
+                            next_state <= IDLE;
+                        end if;
+
+                        when Reception =>
+                        if reset = '0' then
+                            fifo <= data_ram;
+                            if stop_serial='1' then --check if serlializer block is READY
+                                next_state <= Envoi;
+                            end if;
+                        else
+                            next_state <= IDLE;
+                        end if;
+
+                        when IDLE => Envoi
+                        if reset = '0' then
+                            data_serial <= fifo;
+                            start_serial <= '1';
+                            CS_serial <= '0';
+                            next_state <= Incrementation;
                         else
                             next_state <= IDLE;
                         end if;
 
 
-                        when IDLE => Recherche
-                            R_W_ram <= '1';
-                            CS_ram <= '0';
-                            addr_ram <= std_logic_vector( to_unsigned( data_counter, addr_ram'length)); -- convert my data counter to std_logic_vector (4096)10=(1000000000000)2 par exemple
-                            next_state <= ;
+                        when IDLE => Incrementation
+                        if reset = '0' then
+                            if data_counter >= 4096 then
+                                next_state <= IDLE;
+                            end if;
 
+                            data_counter := data_counter+1;
+                            next_state <= Recherche;
+
+                        else
+                            next_state <= IDLE;
+                        end if;
 
                     end case;
                 end if;
