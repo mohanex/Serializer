@@ -71,77 +71,58 @@ begin
 
     process
         begin
-            -- Initialize signals
-            s_reset <= '1';
-            s_R_W <= '0';
-            s_CS <= '0';
-            s_addr <= "000000000000";
-            s_BI_DATA <="00000000";
+            -- Initialize signals and ram
             wait for period;
 
-            -- Test write operation
-            s_addr <= "000000000001"; -- Set the address to write
-            s_BI_DATA <= "10101010"; -- Set the data to be written
+            s_addr <= "000000000001";
+            s_BI_DATA <="11111111";
             s_reset <= '0';
             s_R_W <= '0';
             s_CS <= '0';
+            wait for period;
 
-            wait for period; -- Wait for write operation to complete
-
-            -- Test read operation
-            s_addr <= "000000000001"; -- Set the address to read
-            s_R_W <= '1';
-            s_CS <= '0';
-
-            wait for period; -- Wait for read operation to complete
-
-            -- Test write operation
-            s_addr <= "000000001111"; -- Set the address to write
-            s_BI_DATA <= "11111111"; -- Set the data to be written
-            s_reset <= '0';
-            s_R_W <= '0';
-            s_CS <= '0';
-
-
-            wait for period; -- Wait for write operation to complete
-
-            -- Test read operation
-            s_addr <= "000000001111"; -- Set the address to read
-            s_R_W <= '1';
-            s_CS <= '0';
-
-            wait for period; -- Wait for read operation to complete
-
-            -- Test write operation
-            s_reset <= '0';
-            s_R_W <= '0';
-            s_CS <= '0';
-            s_addr <= "000011001111"; -- Set the address to write
-            s_BI_DATA <= "10111111"; -- Set the data to be written
-
-            wait for period; -- Wait for write operation to complete
-
-            -- Test read operation
-            s_R_W <= '1';
-            s_CS <= '0';
-            s_addr <= "000011001111"; -- Set the address to read
-
-            wait for period; -- Wait for read operation to complete
-
-            --TEST BUT WITH SOME MISCONFIGURATION
-            s_reset <= '0';
-            s_R_W <= '0';
             s_CS <= '1';
-            s_addr <= "000011001110"; -- Set the address to write
-            s_BI_DATA <= "10111110"; -- Set the data to be written
+            s_BI_DATA <="ZZZZZZZZ";
+            wait for period;
 
-            wait for period; -- Wait for write operation to complete
-
-            -- Test read operation
+            s_addr <= "000000000001";
+            s_reset <= '0';
             s_R_W <= '1';
             s_CS <= '0';
-            s_addr <= "000011001110"; -- Set the address to read
+            wait for period;
 
-            wait for period; -- Wait for read operation to complete
+            s_addr <= "000000000011";
+            s_BI_DATA <="11111110";
+            s_reset <= '0';
+            s_R_W <= '0';
+            s_CS <= '0';
+            wait for period;
+
+            s_CS <= '1';
+            s_BI_DATA <="ZZZZZZZZ";
+            wait for period;
+
+            s_addr <= "000000000011";
+            s_reset <= '0';
+            s_R_W <= '1';
+            s_CS <= '0';
+            wait for period;
+
+            -- TRY TO RESET
+            s_reset <= '1';
+            wait for period;
+
+            s_addr <= "000000000011";
+            s_reset <= '0';
+            s_R_W <= '1';
+            s_CS <= '0';
+            wait for period;
+
+            s_addr <= "000000000001";
+            s_reset <= '0';
+            s_R_W <= '1';
+            s_CS <= '0';
+            wait for period;
+            
     end process;
 end Behavioral;
