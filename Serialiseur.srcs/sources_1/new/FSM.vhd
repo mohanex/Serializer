@@ -28,20 +28,21 @@ end FSM;
 architecture Behavioral of FSM is
     type FSM_Status is (IDLE, Recherche, Reception, Envoi, Incrementation);
     signal state,next_state : FSM_Status;
+    signal fifo : std_logic_vector(7 downto 0) := (others => '0');
+
 begin
     -- Registers for data storage
-    signal fifo : std_logic_vector(7 downto 0) := (others => '0');
-    variable data_counter : integer range 0 to 4096 := 0;
-    data_serial <= fifo(0);
 
     process(clk) is
+        variable data_counter : integer range 0 to 4096 := 0;
         begin
+            data_serial <= fifo;
             if rising_edge(Clk) then
                 if reset = '1' then
                     State <= IDLE;
                     addr_ram <= (others => '0');
 
-                elsif rising_edge(clk) then
+                else
                     state <= next_state;
 
                     case State is
@@ -55,9 +56,9 @@ begin
 
                         when Recherche =>
                         if reset = '0' then
-                            R_W_ram <= '1';
-                            CS_ram <= '0';
-                            reset_ram <= '0';
+                            R_W_ram <= '1'; --read mode on ram
+                            CS_ram <= '0';  --chip select on ram
+                            reset_ram <= '0'; --NoRES ram
                             addr_ram <= std_logic_vector( to_unsigned( data_counter, addr_ram'length)); -- convert my data counter to std_logic_vector (4096)10=(1000000000000)2 par exemple
                             next_state <= Reception;
                         else
@@ -66,17 +67,17 @@ begin
 
                         when Reception =>
                         if reset = '0' then
-                            fifo <= data_ram;
-                            if stop_serial='1' then --check if serlializer block is READY
+                            fifo <= data_ram; --stock data coming from ram into the fifo
+                            if stop_serial='1' then --check if serlializer block is READY to receive
                                 next_state <= Envoi;
                             end if;
                         else
                             next_state <= IDLE;
                         end if;
 
-                        when IDLE => Envoi
+                        when Envoi => 
                         if reset = '0' then
-                            data_serial <= fifo;
+                            data_serial <= fifo; --transfer the content of fifo into the input of serializer block
                             start_serial <= '1';
                             CS_serial <= '0';
                             next_state <= Incrementation;
@@ -85,7 +86,7 @@ begin
                         end if;
 
 
-                        when IDLE => Incrementation
+                        when Incrementation => 
                         if reset = '0' then
                             if data_counter >= 4096 then
                                 next_state <= IDLE;
@@ -102,5 +103,4 @@ begin
                 end if;
             end if;
     end process;
-
 end Behavioral;

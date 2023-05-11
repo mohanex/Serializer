@@ -24,41 +24,41 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity RAM is
-generic(
+generic (
     constant ram_depth : natural := 4096;
     constant ram_width : natural := 8;
     constant addr_width : natural := 12
         );
   Port ( 
   
-  data   : INOUT STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0);
-  addr : in STD_LOGIC_VECTOR (addr_width-1 DOWNTO 0);
-  R_W : in STD_LOGIC;
-  Reset : in STD_LOGIC;
-  clk : in STD_LOGIC; 
-  CS : in STD_LOGIC
+  data   : inout STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0); -- One line of Data in the ram
+  addr : in STD_LOGIC_VECTOR (addr_width-1 DOWNTO 0); -- address on the ram
+  R_W : in STD_LOGIC; --Read/Write signal (1: read / 0:write)
+  Reset : in STD_LOGIC; --Reset signal
+  clk : in STD_LOGIC; --clock
+  CS : in STD_LOGIC -- chip select(active on 0!!)
 
   );
 end RAM;
 
 architecture Behavioral of RAM is
-
  
-type ram_type is array (0 to ram_depth - 1) of std_logic_vector(ram_width - 1 downto 0);
-    signal ram_data : ram_type := (others => (others => '0'));
+    type RAM is array (0 to ram_depth-1) of std_logic_vector(ram_width-1 downto 0); -- declare a type of ram
+    signal ram_data : RAM; -- := (others => (others => '0'));  initialize a ram called ram_data of RAM type full of zeros
+
 begin
     process(clk,Reset)
         begin
-        if rising_edge(clk) then
-            if reset = '1' then 
-                ram_data <= (others => (others => '0'));
-            elsif CS = '0' then
-                if R_W = '1' then
-                    data <= ram_data(to_integer(unsigned(addr)));
-                elsif R_W = '0' then
-                    ram_data(to_integer(unsigned(addr))) <= data;
+        if (Reset = '1') then 
+            ram_data <= (others => (others => '0')); -- clear the ram 
+        elsif (rising_edge(clk)) then
+            if (CS = '0') then -- check the chipselect
+                if (R_W = '1') then -- check if its read 
+                    data <= ram_data(to_integer(unsigned(addr))); -- pull out data from memory adrress given to data out
+                elsif (R_W = '0') then -- check if its write
+                    ram_data(to_integer(unsigned(addr))) <= data; -- put data into memory onto the adrress given
                 end if;
-             end if;
+            end if;
         end if;
     end process;
 end Behavioral;
