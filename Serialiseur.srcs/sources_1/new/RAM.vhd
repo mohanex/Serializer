@@ -23,8 +23,6 @@ architecture Behavioral of RAM is
  
     type RAM is array (0 to ram_depth-1) of std_logic_vector(ram_width-1 downto 0); -- declare a new type named RAM 
     signal ram_data : RAM := (others =>(others => '0'));  --initialize a ram called ram_data of RAM type full of zeros
-
-    signal store_val_in : STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0); -- One line of Data in the ram
     signal store_val_out: STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0); -- One line of Data in the ram
 
 begin
