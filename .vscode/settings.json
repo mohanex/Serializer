@@ -1,0 +1,7 @@
+{
+    "launch": {
+        "editor.minimap.enabled" :false,
+        "configurations": [],
+        "compounds": []
+    }
+}
