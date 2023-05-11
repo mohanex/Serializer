@@ -31,36 +31,36 @@ generic (
         );
   Port ( 
   
-  data   : inout STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0); -- One line of Data in the ram
+  data_out   : out STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0); -- One line of Data in the ram
+  data_in   : in STD_LOGIC_VECTOR (ram_width-1 DOWNTO 0); -- One line of Data in the ram
   addr : in STD_LOGIC_VECTOR (addr_width-1 DOWNTO 0); -- address on the ram
   R_W : in STD_LOGIC; --Read/Write signal (1: read / 0:write)
   Reset : in STD_LOGIC; --Reset signal
   clk : in STD_LOGIC; --clock
-  CS : in STD_LOGIC -- chip select(active on 0!!)
+  nCS : in STD_LOGIC -- chip select(active on 0!!)
 
   );
 end RAM;
 
 architecture Behavioral of RAM is
  
-    type RAM is array (0 to ram_depth-1) of std_logic_vector(ram_width-1 downto 0); -- declare a type of ram
-    signal ram_data : RAM; -- := (others => (others => '0'));  initialize a ram called ram_data of RAM type full of zeros
+    type RAM is array (0 to ram_depth-1) of std_logic_vector(ram_width-1 downto 0); -- declare a new type named RAM 
+    signal ram_data : RAM := (others => "00000000");  --initialize a ram called ram_data of RAM type full of zeros
 
 begin
-    process(clk,Reset)
+    process(clk,Reset,nCS)
         begin
         if (Reset = '1') then 
-            ram_data <= (others => (others => '0')); -- clear the ram 
+            ram_data <= (others => "00000000"); -- clear the ram
         elsif (rising_edge(clk)) then
-            if (CS = '0') then -- check the chipselect
-                if (R_W = '1') then -- check if its read 
-                    data <= ram_data(to_integer(unsigned(addr))); -- pull out data from memory adrress given to data out
-                elsif (R_W = '0') then -- check if its write
-                    ram_data(to_integer(unsigned(addr))) <= data; -- put data into memory onto the adrress given
+            if (nCS = '0') then -- check the chipselect
+                if (R_W = '0') then -- check if its write
+                    ram_data(to_integer(unsigned(addr))) <= data_in; -- put data into memory onto the adrress given
                 end if;
             end if;
         end if;
     end process;
+    data_out <= ram_data(to_integer(unsigned(addr))); -- pull out data from memory adrress given to data out
 end Behavioral;
 
 --initlizing from file 
