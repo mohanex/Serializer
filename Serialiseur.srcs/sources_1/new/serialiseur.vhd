@@ -46,9 +46,10 @@ begin
                 end if;
             end if;
         end if;
-        
-        
    end process;
+
+   READY <= s_READY;
+   data_out <= s_stock(s_count) when(Start = '1' and nCS ='0') else (others=>'Z');
 end Behavioral;
 
 --if Load = '0' then --check if loading is OFF (Loading must be off to start serialezation)
