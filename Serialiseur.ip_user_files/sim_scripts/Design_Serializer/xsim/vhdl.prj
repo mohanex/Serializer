@@ -1,0 +1,17 @@
+vhdl xil_defaultlib  \
+"../../../bd/Design_Serializer/ip/Design_Serializer_microblaze_0_0/sim/Design_Serializer_microblaze_0_0.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_dlmb_v10_2/sim/Design_Serializer_dlmb_v10_2.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_ilmb_v10_2/sim/Design_Serializer_ilmb_v10_2.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_dlmb_bram_if_cntlr_2/sim/Design_Serializer_dlmb_bram_if_cntlr_2.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_ilmb_bram_if_cntlr_2/sim/Design_Serializer_ilmb_bram_if_cntlr_2.vhd" \
+"c:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/bd/Design_Serializer/ip/Design_Serializer_lmb_bram_2/Design_Serializer_lmb_bram_2_sim_netlist.vhdl" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_mdm_1_2/sim/Design_Serializer_mdm_1_2.vhd" \
+"c:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/bd/Design_Serializer/ip/Design_Serializer_clk_wiz_1_2/Design_Serializer_clk_wiz_1_2_sim_netlist.vhdl" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_rst_clk_wiz_1_100M_2/sim/Design_Serializer_rst_clk_wiz_1_100M_2.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_axi_gpio_0_1/sim/Design_Serializer_axi_gpio_0_1.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_axi_gpio_0_2/sim/Design_Serializer_axi_gpio_0_2.vhd" \
+"../../../bd/Design_Serializer/ip/Design_Serializer_axi_gpio_0_3/sim/Design_Serializer_axi_gpio_0_3.vhd" \
+"c:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/bd/Design_Serializer/ip/Design_Serializer_xbar_1/Design_Serializer_xbar_1_sim_netlist.vhdl" \
+"../../../bd/Design_Serializer/sim/Design_Serializer.vhd" \
+
+nosort

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon May 15 09:48:22 2023
+# Process ID: 27520
+# Current directory: C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.runs/Design_Serializer_ilmb_v10_2_synth_1
+# Command line: vivado.exe -log Design_Serializer_ilmb_v10_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Design_Serializer_ilmb_v10_2.tcl
+# Log file: C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.runs/Design_Serializer_ilmb_v10_2_synth_1/Design_Serializer_ilmb_v10_2.vds
+# Journal file: C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.runs/Design_Serializer_ilmb_v10_2_synth_1\vivado.jou
+#-----------------------------------------------------------
+source Design_Serializer_ilmb_v10_2.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP Design_Serializer_ilmb_v10_2, cache-ID = 69db25d30f80d763.
+INFO: [Common 17-206] Exiting Vivado at Mon May 15 09:48:36 2023...
