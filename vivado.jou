@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon May 15 11:02:53 2023
+# Process ID: 22832
+# Current directory: C:/Users/mafassi/Downloads/serializer/Serializer
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8020 C:\Users\mafassi\Downloads\serializer\Serializer\Serialiseur.xpr
+# Log file: C:/Users/mafassi/Downloads/serializer/Serializer/vivado.log
+# Journal file: C:/Users/mafassi/Downloads/serializer/Serializer\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_SERIAL.tcl
+restart
+run 10 us
+close_sim
+launch_simulation
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+add_bp {C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd} 50
+remove_bps -file {C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd} -line 50
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+restart
+run 260 ns
+run 260 ns
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+add_bp {C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd} 52
+remove_bps -file {C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd} -line 52
+add_bp {C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd} 52
+remove_bps -file {C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd} -line 52
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+restart
+run all
+restart
+run 260 ns
+run 260 ns
+save_wave_config {C:/Users/mafassi/Downloads/serializer/Serializer/tb_SERIAL_behav.wcfg}
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
