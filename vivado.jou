@@ -66,3 +66,39 @@ close_sim
 launch_simulation
 source tb_SERIAL.tcl
 close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+source tb_SERIAL.tcl
+restart
+run 260 ns
+run 260 ns
+run 260 ns
+run 260 ns
+run 260 ns
+run 260 ns
+save_wave_config {C:/Users/mafassi/Downloads/serializer/Serializer/tb_SERIAL_behav1.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/mafassi/Downloads/serializer/Serializer/tb_SERIAL_behav1.wcfg
+set_property xsim.view C:/Users/mafassi/Downloads/serializer/Serializer/tb_SERIAL_behav1.wcfg [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config C:/Users/mafassi/Downloads/serializer/Serializer/tb_SERIAL_behav1.wcfg
+source tb_SERIAL.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/mafassi/Downloads/serializer/Serializer/tb_SERIAL_behav1.wcfg
+source tb_SERIAL.tcl
+close_sim
