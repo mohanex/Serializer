@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="Design_Serializer" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1683901345"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1683901345"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1683901345"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1683901345"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1684136802"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1684136802"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1684136802"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1684136802"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Design_Serializer_microblaze_0_0\Design_Serializer_microblaze_0_0.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0"/>
@@ -15,7 +15,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_dlmb_v10_1\Design_Serializer_dlmb_v10_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_dlmb_v10_2\Design_Serializer_dlmb_v10_2.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0_local_memory/dlmb_v10"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -23,7 +23,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_ilmb_v10_1\Design_Serializer_ilmb_v10_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_ilmb_v10_2\Design_Serializer_ilmb_v10_2.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0_local_memory/ilmb_v10"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -31,7 +31,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_dlmb_bram_if_cntlr_1\Design_Serializer_dlmb_bram_if_cntlr_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_dlmb_bram_if_cntlr_2\Design_Serializer_dlmb_bram_if_cntlr_2.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0_local_memory/dlmb_bram_if_cntlr"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -39,7 +39,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_ilmb_bram_if_cntlr_1\Design_Serializer_ilmb_bram_if_cntlr_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_ilmb_bram_if_cntlr_2\Design_Serializer_ilmb_bram_if_cntlr_2.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0_local_memory/ilmb_bram_if_cntlr"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -47,7 +47,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_lmb_bram_1\Design_Serializer_lmb_bram_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_lmb_bram_2\Design_Serializer_lmb_bram_2.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0_local_memory/lmb_bram"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -55,39 +55,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_xbar_0\Design_Serializer_xbar_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph/xbar"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Design_Serializer_microblaze_0_axi_periph_0\Design_Serializer_microblaze_0_axi_periph_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph"/>
-        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Design_Serializer_microblaze_0_axi_intc_0\Design_Serializer_microblaze_0_axi_intc_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_intc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Design_Serializer_microblaze_0_xlconcat_0\Design_Serializer_microblaze_0_xlconcat_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_xlconcat"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Design_Serializer_mdm_1_1\Design_Serializer_mdm_1_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_mdm_1_2\Design_Serializer_mdm_1_2.xci" Type="IP">
         <Instance HierarchyPath="mdm_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -95,7 +63,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_clk_wiz_1_1\Design_Serializer_clk_wiz_1_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_clk_wiz_1_2\Design_Serializer_clk_wiz_1_2.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -103,7 +71,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_rst_clk_wiz_1_100M_1\Design_Serializer_rst_clk_wiz_1_100M_1.xci" Type="IP">
+      <File Name="ip\Design_Serializer_rst_clk_wiz_1_100M_2\Design_Serializer_rst_clk_wiz_1_100M_2.xci" Type="IP">
         <Instance HierarchyPath="rst_clk_wiz_1_100M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -111,12 +79,92 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Design_Serializer_axi_gpio_0_0\Design_Serializer_axi_gpio_0_0.xci" Type="IP">
+      <File Name="ip\Design_Serializer_axi_gpio_0_1\Design_Serializer_axi_gpio_0_1.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Design_Serializer_axi_gpio_0_2\Design_Serializer_axi_gpio_0_2.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Design_Serializer_axi_gpio_0_3\Design_Serializer_axi_gpio_0_3.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Design_Serializer_xbar_1\Design_Serializer_xbar_1.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Design_Serializer_microblaze_0_axi_periph_1\Design_Serializer_microblaze_0_axi_periph_1.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\Design_Serializer.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\Design_Serializer.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="Design_Serializer.bmm" Type="BMM">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="Design_Serializer_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff\Design_Serializer.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="Design_Serializer.bda">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\Design_Serializer_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="synth\Design_Serializer.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim\Design_Serializer.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
