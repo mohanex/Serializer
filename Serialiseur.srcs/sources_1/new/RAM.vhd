@@ -53,18 +53,3 @@ begin
     end process;
 
 end Behavioral;
-
---initlizing from file 
---type RamType is array(0 to 7) of bit_vector(31 downto 0);
---impure function InitRamFromFile (RamFileName : in string) return RamType is
---FILE RamFile : text is in RamFileName;
---variable RamFileLine : line;
---variable RAM : RamType;
---begin
---for I in RamType'range loop
---readline (RamFile, RamFileLine);
---read (RamFileLine, RAM(I));
---end loop;
---return RAM;
---end function;
---signal RAM : RamType := InitRamFromFile("rams_20c.data"); 
