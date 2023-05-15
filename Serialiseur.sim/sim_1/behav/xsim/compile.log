@@ -1,2 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sources_1/new/serialiseur.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SERIAL'
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mafassi/Downloads/serializer/Serializer/Serialiseur.srcs/sim_1/new/tb_SERIAL.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'tb_SERIAL'
